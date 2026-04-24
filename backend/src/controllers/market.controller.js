@@ -68,9 +68,27 @@ const getPriceHistory = async (req, res, next) => {
   }
 };
 
+// ✅ ADD THIS FUNCTION
+const getMarketSummary = async (req, res, next) => {
+  try {
+    const tokensListed = await tokenService.countTokens();
+    const marketData = await marketService.getMarketData();
+
+    res.json({
+      tokensListed,
+      totalTrades: marketData.totalTrades,
+      totalVolume: marketData.totalVolume,
+      generatedAt: new Date().toISOString()
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getMarketData,
   getTokens,
   getTokenBySymbol,
   getPriceHistory,
+  getMarketSummary, // ✅ added
 };
