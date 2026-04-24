@@ -1,3 +1,36 @@
+## Assignment: Market Summary Endpoint
+
+Implemented:
+GET /api/market/summary
+
+Returns:
+- tokensListed
+- totalTrades
+- totalVolume
+- generatedAt
+
+Test:
+http://localhost:3001/api/market/summary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # StockX – Decentralized AI-Powered Stock Exchange
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
